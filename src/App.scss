@@ -34,6 +34,10 @@
 }
 
 
+.relative{
+    position: relative;
+}
+
 // Navbar 
 .nav-menu {
     @include flex(row);
@@ -179,4 +183,30 @@ img {
     .imageTablet {
         display: none;
     }
+}
+
+.presentationText{
+    // Middle of the parent element
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    //Box sizes
+    padding: 15px;
+    min-width: 350px;
+    min-height: 300px;
+    // Box elements position
+    @include flex(row);
+    @include flex-center();
+    // Text styles
+    background-color: rgba($color: #000000, $alpha: 0.5);
+    //border-radius: 10px;
+    color: white;
+
+    font-family: 'Roboto Slab', serif;
+    font-size: 2.3rem;
+    font-weight: 600;
+    
+    text-align: center;
+    
 }
