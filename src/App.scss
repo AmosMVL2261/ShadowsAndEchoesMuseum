@@ -1,0 +1,182 @@
+* {
+    box-sizing: border-box;
+}
+
+@mixin flex($direction) {
+    display: flex;
+    flex-flow: $direction nowrap;
+
+}
+
+@mixin flex-menu() {
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin flex-center() {
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Roboto Slab', serif;
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+// Classes for the hamburguer menu
+.hidden {
+    display: none;
+}
+
+.block {
+    display: block;
+}
+
+
+// Navbar 
+.nav-menu {
+    @include flex(row);
+    @include flex-menu();
+    height: 100px;
+    width: 100%;
+    padding: 0px 20px;
+    background-color: black;
+    color: white;
+}
+
+// Desktop menu
+.nav-desktop {
+    @include flex(row);
+    @include flex-center();
+}
+
+// List elements
+.menu-element {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.1rem;
+    margin-right: 30px;
+    text-align: center;
+}
+
+.menu-element-f {
+    margin-right: 0px;
+}
+
+// Hidden mobile navbar for desktop
+.mobile {
+    display: none;
+}
+
+.nav-mobile {
+    display: none;
+}
+
+img {
+    color : "red";
+}
+
+@media (max-width: 1024px){
+    
+    .nav-desktop{
+        display: none;
+    }
+
+    // This includes the hamburguer icon and the mobile menu list
+    .mobile{
+        display: block;
+    }
+
+    @keyframes fadeIn {
+        0% { opacity: 0; }
+        100% { opacity: 1; }
+    }
+
+    .nav-mobile{
+        animation: fadeIn 0.5s;
+        @include flex(column);
+        @include flex-center();
+        position: absolute;
+        top: 100px;
+        right: 0px;
+        color: white;
+        background-color: rgba(0,0,0,1);
+        padding: 20px;
+    }
+
+    .menu-element {
+        font-size: 1.3rem;
+        margin-bottom: 25px;
+        margin-right: 0px;
+    }
+
+    .menu-element-f {
+        margin-bottom: 0px;
+    }
+}
+
+// Video for desktop
+
+#myVideo {
+    width: 100%; 
+    height: 100%;
+}
+
+.videoDesktop {
+    display: block;
+}
+
+// Image for Tablet
+
+.imageTablet {
+    display: none;
+}
+
+
+// Image for mobile
+
+.imageMobile {
+    display: none;
+}
+
+.frontImage{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+// Tablets
+@media (min-width: 720px) and (max-width: 1024px) {
+
+
+    .videoDesktop {
+        display: none;
+    }
+
+    .imageTablet {
+        display: block;
+    }
+
+    .imageMobile {
+        display: none;
+    }
+
+}
+
+
+// Mobile
+@media (max-width: 719px) {
+
+
+    .videoDesktop {
+        display: none;
+    }
+
+    .imageMobile {
+        display: block;
+    }
+
+    .imageTablet {
+        display: none;
+    }
+}
